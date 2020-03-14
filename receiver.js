@@ -1,7 +1,11 @@
 receiver = (function () {
+  var random_hex = function() {
+    return (Math.random()*0xFFFF<<0).toString(16);
+  }
+  
   var peer;
-  var receiver_id = (Math.random()*0xFFFFFFFF<<0).toString(16);
-  var shared_secret = (Math.random()*0xFFFFFFFF<<0).toString(16);
+  var receiver_id = random_hex() + random_hex();
+  var shared_secret = random_hex() + random_hex();
 
   var init = function () {
     var sender_url = window.location+'sender.html?'+receiver_id+':'+shared_secret
