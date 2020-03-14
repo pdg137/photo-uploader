@@ -4,7 +4,7 @@ receiver = (function () {
   var shared_secret = (Math.random()*0xFFFFFFFF<<0).toString(16);
 
   var init = function () {
-    var sender_url = window.location.origin+'/sender.html?'+receiver_id+':'+shared_secret
+    var sender_url = window.location+'sender.html?'+receiver_id+':'+shared_secret
     $('#sender_link').attr('href',sender_url).text(sender_url)
 
     var qrcode = new QRCode(document.getElementById('qr_code'), {
