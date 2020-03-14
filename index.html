@@ -1,0 +1,47 @@
+<!doctype html>
+<head>
+<meta charset="utf-8">
+<script crossorigin='anonymous' src='https://code.jquery.com/jquery-3.4.1.min.js'></script>
+
+<script src="https://unpkg.com/peerjs@1.0.0/dist/peerjs.min.js"></script>
+<script src="receiver.js"></script>
+<script src="qrcode.min.js"></script>
+
+<title>P2P Photo Sharing - Receiver</title>
+</head>
+<body>
+
+
+  <style>
+    img {
+      max-width: 300px;
+    }
+    img.expanded {
+      max-width: 100%;
+    }
+    .rotate90 {
+      transform: rotate(90deg);
+    }
+    .rotate270 {
+      transform: rotate(270deg);
+    }
+    .rotate180 {
+      transform: rotate(180deg);
+    }
+    #qr_code img {
+      margin: 1em 1em 1em 1em;
+    }
+  </style>
+
+<p>
+  Load this URL on the other device to start sending photos: <a id='sender_link'></a>
+  <span id="qr_code"></span>
+</p>
+
+<div id='status'></div>
+
+<div id="pictures">
+</div>
+
+</body>
+</html>
