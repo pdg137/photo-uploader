@@ -4,7 +4,7 @@ sender = (function() {
   var init = function() {
     $('#status').text('Connecting to peer server...');
 
-    peer = new Peer(sender_id, { host: '0.peerjs.com', debug: 2 });
+    peer = new Peer({ host: '0.peerjs.com', debug: 2 });
 
     peer.on('open', function (id) {
       $('#status').text('Connected to peer server.');
@@ -49,8 +49,7 @@ sender = (function() {
   };
 })();
 
-var sender_id = (Math.random()*0xFFFFFF<<0).toString(16);
-var receiver_id = location.search.slice(1,7);
-var shared_secret = location.search.slice(8,17);
+var receiver_id = location.search.slice(1,9);
+var shared_secret = location.search.slice(10,18);
 
 $(sender.init);

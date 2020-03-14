@@ -2,7 +2,7 @@ receiver = (function () {
   var random_hex = function() {
     return (Math.random()*0xFFFF<<0).toString(16);
   }
-  
+
   var peer;
   var receiver_id = random_hex() + random_hex();
   var shared_secret = random_hex() + random_hex();
@@ -13,8 +13,8 @@ receiver = (function () {
 
     var qrcode = new QRCode(document.getElementById('qr_code'), {
       text: sender_url,
-      width: 128,
-      height: 128,
+      width: 192,
+      height: 192,
       correctLevel : QRCode.CorrectLevel.L
     });
 
